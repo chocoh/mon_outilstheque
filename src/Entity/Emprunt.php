@@ -31,6 +31,16 @@ class Emprunt
      */
     private $avis;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\outils", inversedBy="emprunts")
+     */
+    private $outil;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="emprunts")
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +78,30 @@ class Emprunt
     public function setAvis(?string $avis): self
     {
         $this->avis = $avis;
+
+        return $this;
+    }
+
+    public function getOutil(): ?outils
+    {
+        return $this->outil;
+    }
+
+    public function setOutil(?outils $outil): self
+    {
+        $this->outil = $outil;
+
+        return $this;
+    }
+
+    public function getUser(): ?users
+    {
+        return $this->user;
+    }
+
+    public function setUser(?users $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

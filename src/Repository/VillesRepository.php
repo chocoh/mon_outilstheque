@@ -22,7 +22,7 @@ class VillesRepository extends ServiceEntityRepository
     // /**
     //  * @return Villes[] Returns an array of Villes objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('v')
@@ -34,17 +34,15 @@ class VillesRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Villes
-    {
-        return $this->createQueryBuilder('v')
-            ->andWhere('v.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+
+    // public function findOneBySomeField($value): ?Villes
+    // {
+    //     return $this->createQueryBuilder('v')
+    //         ->andWhere('v.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
 }

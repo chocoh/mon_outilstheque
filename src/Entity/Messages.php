@@ -26,6 +26,16 @@ class Messages
      */
     private $date_envoi;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="messages")
+     */
+    private $expediteur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="messages")
+     */
+    private $destinataire;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +61,30 @@ class Messages
     public function setDateEnvoi(\DateTimeInterface $date_envoi): self
     {
         $this->date_envoi = $date_envoi;
+
+        return $this;
+    }
+
+    public function getExpediteur(): ?users
+    {
+        return $this->expediteur;
+    }
+
+    public function setExpediteur(?users $expediteur): self
+    {
+        $this->expediteur = $expediteur;
+
+        return $this;
+    }
+
+    public function getDestinataire(): ?users
+    {
+        return $this->destinataire;
+    }
+
+    public function setDestinataire(?users $destinataire): self
+    {
+        $this->destinataire = $destinataire;
 
         return $this;
     }

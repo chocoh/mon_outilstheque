@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +37,32 @@ class Outils
      * @ORM\Column(type="integer", nullable=true)
      */
     private $duree_emprunt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\categorie", inversedBy="outils")
+     */
+    private $categorie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="outils")
+     */
+    private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Media", mappedBy="outil")
+     */
+    private $media;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Emprunt", mappedBy="outil")
+     */
+    private $emprunts;
+
+    public function __construct()
+    {
+        $this->media = new ArrayCollection();
+        $this->emprunts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -85,6 +113,92 @@ class Outils
     public function setDureeEmprunt(?int $duree_emprunt): self
     {
         $this->duree_emprunt = $duree_emprunt;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?categorie $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getUser(): ?users
+    {
+        return $this->user;
+    }
+
+    public function setUser(?users $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Media[]
+     */
+    public function getMedia(): Collection
+    {
+        return $this->media;
+    }
+
+    public function addMedium(Media $medium): self
+    {
+        if (!$this->media->contains($medium)) {
+            $this->media[] = $medium;
+            $medium->setOutil($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMedium(Media $medium): self
+    {
+        if ($this->media->contains($medium)) {
+            $this->media->removeElement($medium);
+            // set the owning side to null (unless already changed)
+            if ($medium->getOutil() === $this) {
+                $medium->setOutil(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Emprunt[]
+     */
+    public function getEmprunts(): Collection
+    {
+        return $this->emprunts;
+    }
+
+    public function addEmprunt(Emprunt $emprunt): self
+    {
+        if (!$this->emprunts->contains($emprunt)) {
+            $this->emprunts[] = $emprunt;
+            $emprunt->setOutil($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEmprunt(Emprunt $emprunt): self
+    {
+        if ($this->emprunts->contains($emprunt)) {
+            $this->emprunts->removeElement($emprunt);
+            // set the owning side to null (unless already changed)
+            if ($emprunt->getOutil() === $this) {
+                $emprunt->setOutil(null);
+            }
+        }
 
         return $this;
     }

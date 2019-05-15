@@ -22,7 +22,7 @@ class MediaRepository extends ServiceEntityRepository
     // /**
     //  * @return Media[] Returns an array of Media objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('m')
@@ -34,17 +34,15 @@ class MediaRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Media
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+    // public function findOneBySomeField($value): ?Media
+    // {
+    //     return $this->createQueryBuilder('m')
+    //         ->andWhere('m.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
+
 }

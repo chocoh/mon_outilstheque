@@ -21,6 +21,11 @@ class Media
      */
     private $ulr_media;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\outils", inversedBy="media")
+     */
+    private $outil;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +39,18 @@ class Media
     public function setUlrMedia(string $ulr_media): self
     {
         $this->ulr_media = $ulr_media;
+
+        return $this;
+    }
+
+    public function getOutil(): ?outils
+    {
+        return $this->outil;
+    }
+
+    public function setOutil(?outils $outil): self
+    {
+        $this->outil = $outil;
 
         return $this;
     }
