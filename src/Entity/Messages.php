@@ -7,8 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MessagesRepository")
  */
-class Messages
-{
+class Messages{
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
