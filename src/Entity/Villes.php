@@ -9,8 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VillesRepository")
  */
-class Villes
-{
+class Villes{
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -61,6 +60,11 @@ class Villes
     public function __construct()
     {
         $this->users = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+            return $this->getName();
     }
 
     public function getId(): ?int

@@ -7,8 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MediaRepository")
  */
-class Media
-{
+class Media{
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

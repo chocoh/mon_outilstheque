@@ -10,8 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
  */
-class Users implements UserInterface
-{
+class Users implements UserInterface{
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -86,6 +85,14 @@ class Users implements UserInterface
         $this->emprunts = new ArrayCollection();
         $this->messages = new ArrayCollection();
     }
+
+    // toString
+    // @return string
+
+   public function __toString()
+   {
+           return $this->getPseudo();
+   }
 
     public function getId(): ?int
     {

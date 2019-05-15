@@ -9,8 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategorieRepository")
  */
-class Categorie
-{
+class Categorie{
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -37,6 +36,15 @@ class Categorie
     {
         $this->outils = new ArrayCollection();
     }
+
+
+    // toString
+    // @return string
+
+   public function __toString()
+   {
+           return $this->getDesignation();
+   }
 
     public function getId(): ?int
     {
