@@ -70,7 +70,7 @@ class Users implements UserInterface {
     private $emprunts;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\villes", inversedBy="users")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Villes", inversedBy="users")
      */
     private $ville;
 

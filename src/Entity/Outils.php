@@ -38,12 +38,12 @@ class Outils{
     private $duree_emprunt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\categorie", inversedBy="outils")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="outils")
      */
     private $categorie;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="outils")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="outils")
      */
     private $user;
 
