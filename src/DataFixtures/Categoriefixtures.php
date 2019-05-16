@@ -7,8 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
 
-class Categoriefixtures extends Fixture
-{
+class Categoriefixtures extends Fixture{
     public function load(ObjectManager $manager)
     {
       for ($i = 0; $i < 5; $i++){

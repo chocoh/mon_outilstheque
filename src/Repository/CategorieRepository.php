@@ -12,8 +12,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Categorie[]    findAll()
  * @method Categorie[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CategorieRepository extends ServiceEntityRepository
-{
+class CategorieRepository extends ServiceEntityRepository{
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Categorie::class);

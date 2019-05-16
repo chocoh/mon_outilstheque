@@ -12,8 +12,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Users[]    findAll()
  * @method Users[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UsersRepository extends ServiceEntityRepository
-{
+class UsersRepository extends ServiceEntityRepository{
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Users::class);
