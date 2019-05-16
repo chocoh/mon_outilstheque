@@ -22,7 +22,7 @@ class EmpruntRepository extends ServiceEntityRepository
     // /**
     //  * @return Emprunt[] Returns an array of Emprunt objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('e')
@@ -34,17 +34,15 @@ class EmpruntRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Emprunt
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+    // public function findOneBySomeField($value): ?Emprunt
+    // {
+    //     return $this->createQueryBuilder('e')
+    //         ->andWhere('e.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
+
 }

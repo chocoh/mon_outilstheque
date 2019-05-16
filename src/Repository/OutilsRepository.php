@@ -22,7 +22,7 @@ class OutilsRepository extends ServiceEntityRepository
     // /**
     //  * @return Outils[] Returns an array of Outils objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('o')
@@ -34,9 +34,8 @@ class OutilsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
-    /*
+
     public function findOneBySomeField($value): ?Outils
     {
         return $this->createQueryBuilder('o')
@@ -46,5 +45,5 @@ class OutilsRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+
 }
