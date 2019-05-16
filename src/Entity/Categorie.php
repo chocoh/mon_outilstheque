@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategorieRepository")
  */
-class Categorie{
+class Categorie {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
