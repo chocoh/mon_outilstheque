@@ -62,10 +62,13 @@ class Outils{
         $this->media = new ArrayCollection();
         $this->emprunts = new ArrayCollection();
     }
+<<<<<<< HEAD
     public function __toString()
     {
             return $this->getNomOutil();
     }
+=======
+>>>>>>> 6a007881e8b44452896bee6cce4f79b0d49298ec
 
     public function getId(): ?int
     {

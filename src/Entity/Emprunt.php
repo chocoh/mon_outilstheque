@@ -45,11 +45,14 @@ class Emprunt{
         return $this->id;
     }
 
+<<<<<<< HEAD
     public function __toString()
     {
             return $this->getAvis();
     }
 
+=======
+>>>>>>> 6a007881e8b44452896bee6cce4f79b0d49298ec
     public function getDateDebut(): ?\DateTimeInterface
     {
         return $this->date_debut;

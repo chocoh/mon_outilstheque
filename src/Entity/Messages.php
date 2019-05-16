@@ -40,11 +40,14 @@ class Messages{
         return $this->id;
     }
 
+<<<<<<< HEAD
     public function __toString()
     {
             return $this->getMessage();
     }
 
+=======
+>>>>>>> 6a007881e8b44452896bee6cce4f79b0d49298ec
     public function getMessage(): ?string
     {
         return $this->message;
