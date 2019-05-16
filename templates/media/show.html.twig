@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Media{% endblock %}
+
+{% block body %}
+    <h1>Media</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ medium.id }}</td>
+            </tr>
+            <tr>
+                <th>Ulr_media</th>
+                <td>{{ medium.ulrMedia }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('media_index') }}">back to list</a>
+
+    <a href="{{ path('media_edit', {'id': medium.id}) }}">edit</a>
+
+    {{ include('media/_delete_form.html.twig') }}
+{% endblock %}

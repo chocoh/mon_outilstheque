@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Outils index{% endblock %}
+
+{% block body %}
+    <h1>Outils index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_outil</th>
+                <th>Descriptifs</th>
+                <th>Date_enregistrement</th>
+                <th>Duree_emprunt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for outil in outils %}
+            <tr>
+                <td>{{ outil.id }}</td>
+                <td>{{ outil.nomOutil }}</td>
+                <td>{{ outil.descriptifs }}</td>
+                <td>{{ outil.dateEnregistrement ? outil.dateEnregistrement|date('d-m-y H:i:s') : '' }}</td>
+                <td>{{ outil.dureeEmprunt }}</td>
+                <td>
+                    <a href="{{ path('outils_show', {'id': outil.id}) }}">show</a>
+                    <a href="{{ path('outils_edit', {'id': outil.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('outils_new') }}">Create new</a>
+{% endblock %}
