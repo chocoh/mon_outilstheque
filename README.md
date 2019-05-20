@@ -1,5 +1,13 @@
 # Mon OutilsThèque
+  ----------------
+  ----------------
 
-**Aplication de gestion de prèts d'outils divers.**
+**Projet :**
+Aplication de gestion de prèts d'outils divers.
 
-Résumé
+**Instalation :**
+  * I-Via composer
+
+  * II-En téléchargement
+
+**Licence :**
