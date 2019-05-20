@@ -1,6 +1,4 @@
 # Mon OutilsThèque
-  ----------------
-  ----------------
 
 **Projet :**
 Aplication de gestion de prèts d'outils divers.
