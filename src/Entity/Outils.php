@@ -68,6 +68,11 @@ class Outils{
         return $this->id;
     }
 
+    public function __toString()
+    {
+            return $this->getNomOutil();
+    }
+
     public function getNomOutil(): ?string
     {
         return $this->nom_outil;
