@@ -17,8 +17,8 @@ Aplication de gestion de prèts d'outils divers.
 
   * III - Accédez à votre au projet et le lancer sur le serveur:*
 
-    - $ cd mon_outilstheque
-    - $ php bin/console server:run
+    - cd mon_outilstheque
+    - php bin/console server:run
 
 
 **Licence :**
