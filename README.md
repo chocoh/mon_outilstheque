@@ -1,3 +1,5 @@
 # Mon OutilsThèque
 
-**Aplication de gestion de prèts d'outils divers.
+**Aplication de gestion de prèts d'outils divers.**
+
+Résumé
