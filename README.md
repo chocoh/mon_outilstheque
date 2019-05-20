@@ -11,6 +11,6 @@ Aplication de gestion de prèts d'outils divers.
 
 
   * II-En téléchargement
-    - Récupérer le fichier [ici](https://github.com/chocoh/mon_outilstheque.git)
+    - Récupérer le fichier [ici](mon_outilstheque-master.zip)
 
 **Licence :**
