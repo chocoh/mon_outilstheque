@@ -1,2 +1,5 @@
 # mon_outilstheque
-hop ?
+
+récupérer le projet puis :
+- composer update
+- php bin/console server:run
