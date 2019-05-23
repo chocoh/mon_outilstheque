@@ -1,0 +1,19 @@
+easy_admin:
+  design:
+    menu:
+      - label: 'Mon compte'
+        children:
+            - {entity: Users}
+
+      - label: 'Mes annonces'
+        children:
+          - {entity: Categorie}
+          - {entity: Outils}
+
+      - label: 'Mon emprunts'
+        children:
+          - {entity: Emprunt}
+
+      - label: 'Mes messages'
+        children:
+            - {entity: Messages}

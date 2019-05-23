@@ -26,18 +26,22 @@ class Messages{
     private $date_envoi;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="messages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="messages")
      */
     private $expediteur;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="messages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="messages")
      */
     private $destinataire;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+    public function __toString()
+    {
+            return $this->getMessage();
     }
 
     public function getMessage(): ?string

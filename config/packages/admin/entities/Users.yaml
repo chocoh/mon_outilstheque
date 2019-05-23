@@ -1,0 +1,14 @@
+easy_admin:
+  entities:
+    Users:
+      class: App\Entity\Users
+      form:
+        fields:
+          - {property: 'nom'}
+          - {property: 'prenom'}
+          - {property: 'adresse'}
+          - {property: 'pseudo'}
+          - {property: 'avatar'}
+          - {property: 'email'}
+          - {property: 'ville'}
+  disabled_actions: ['new']

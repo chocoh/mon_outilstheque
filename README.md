@@ -1,6 +1,7 @@
 # Mon OutilsThèque
 
 **Projet :**
+
 Aplication de gestion de prèts d'outils divers.
 
 **Instalation :**
@@ -12,7 +13,7 @@ Aplication de gestion de prèts d'outils divers.
   * II - En téléchargement
     - Récupérer le fichier zip
     - decompresser le fichier
-    - Créer une nouvelle bd sur PHPMyAdmin
+    - Créer une nouvelle bd sur *PHPMyAdmin*
     - Exporter la base de donnée qui vous avez récupérer dans le fichier bd
 
   * III - Accédez à votre au projet et le lancer sur le serveur:*
