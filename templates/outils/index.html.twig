@@ -4,31 +4,24 @@
 
 {% block body %}
     <h1>Outils index</h1>
-
     <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom_outil</th>
-                <th>Descriptifs</th>
-                <th>Date_enregistrement</th>
-                <th>Duree_emprunt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
         <tbody>
         {% for outil in outils %}
-            <tr>
-                <td>{{ outil.id }}</td>
-                <td>{{ outil.nomOutil }}</td>
-                <td>{{ outil.descriptifs }}</td>
-                <td>{{ outil.dateEnregistrement ? outil.dateEnregistrement|date('d-m-y H:i:s') : '' }}</td>
-                <td>{{ outil.dureeEmprunt }}</td>
-                <td>
-                    <a href="{{ path('outils_show', {'id': outil.id}) }}">show</a>
-                    <a href="{{ path('outils_edit', {'id': outil.id}) }}">edit</a>
-                </td>
-            </tr>
+           <div class="row">
+            <div class="col-sm-4">
+              <div class="card-deck">
+                <div class="card">
+                  <img src="{{ asset('build/images/' media.url_media ) }} " class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ outil.nomOutil }}</h5>
+                    <p class="card-text">T{{ outil.descriptifs }}</p>
+                    <p class="card-text"><small class="text-muted">Disponible pendant {{ outil.dureeEmprunt }} jours</small></p>
+                    <a href="{{ path('outils_show', {'id': outil.id}) }}">Détail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         {% else %}
             <tr>
                 <td colspan="6">no records found</td>
@@ -37,5 +30,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('outils_new') }}">Create new</a>
+
 {% endblock %}

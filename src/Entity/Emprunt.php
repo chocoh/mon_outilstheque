@@ -31,12 +31,12 @@ class Emprunt{
     private $avis;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\outils", inversedBy="emprunts")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Outils", inversedBy="emprunts")
      */
     private $outil;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\users", inversedBy="emprunts")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="emprunts")
      */
     private $user;
 
@@ -44,6 +44,11 @@ class Emprunt{
     {
         return $this->id;
     }
+    public function __toString()
+    {
+            return $this->getAvis();
+    }
+
 
     public function getDateDebut(): ?\DateTimeInterface
     {

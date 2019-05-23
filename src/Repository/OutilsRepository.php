@@ -26,6 +26,8 @@ class OutilsRepository extends ServiceEntityRepository
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('o')
+            ->select(['m'])
+            ->leftjoin('u.url_media', 'u')
             ->andWhere('o.exampleField = :val')
             ->setParameter('val', $value)
             ->orderBy('o.id', 'ASC')

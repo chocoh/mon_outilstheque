@@ -21,13 +21,17 @@ class Media{
     private $ulr_media;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\outils", inversedBy="media")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Outils", inversedBy="media")
      */
     private $outil;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+    public function __toString()
+    {
+            return $this->getUlrMedia();
     }
 
     public function getUlrMedia(): ?string
