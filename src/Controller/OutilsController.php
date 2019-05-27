@@ -21,7 +21,7 @@ class OutilsController extends AbstractController
     public function index(OutilsRepository $outilsRepository): Response
     {
         return $this->render('outils/index.html.twig', [
-            'outils' => $outilsRepository->findAll(),
+            'outils' => $outilsRepository->allOutilsAndMedia(),
         ]);
     }
 

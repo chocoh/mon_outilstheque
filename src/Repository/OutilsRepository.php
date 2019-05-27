@@ -23,19 +23,14 @@ class OutilsRepository extends ServiceEntityRepository
     //  * @return Outils[] Returns an array of Outils objects
     //  */
 
-    public function findByExampleField($value)
+    public function allOutilsAndMedia()
     {
-        return $this->createQueryBuilder('o')
-            ->select(['o','m'])
-            ->from(Media::class, 'm')
-            ->leftjoin('o.media.id', 'm')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('o.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+      // SELECT * FROM outils LEFT JOIN MEDIA ON outils.id=media.outil_id
+      $conn=$this->getEntityManager()->getConnection();
+      $sql='SELECT * FROM Outils LEFT JOIN Media ON Outils.id=Media.outil_id';
+      $stmt=$conn->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
     }
 
 
