@@ -84,8 +84,10 @@
                       <div class="col cardannonce" >
                         <div class="card w-100">
                           <div class="card-body">
-                            <img src="../build/images/{{ outil.url_media }}" width="150" height="150" class="rounded float-right" alt="..." >
-                            <div class="card-body">
+                            {% if outil.url_media != "" %}
+                                <img src="../build/images/{{ outil.url_media }}" width="150" height="150" class="rounded float-right" alt="..." >
+                            {% endif %}
+                              <div class="card-body">
                               <h5 class="card-title">{{ outil.nom_outil }}</h5>
                               <p class="card-text">{{ outil.descriptifs }}</p>
                               <p class="card-text"><small class="text-muted">Disponible pendant {{ outil.duree_emprunt }} jours</small></p>
