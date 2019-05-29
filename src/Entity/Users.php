@@ -89,14 +89,14 @@ class Users implements UserInterface{
     // toString
     // @return string
 
-   public function __toString()
-   {
-           return $this->getPseudo();
-   }
-
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function __toString()
+    {
+            return $this->getPseudo();
     }
 
     public function getEmail(): ?string

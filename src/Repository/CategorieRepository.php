@@ -22,26 +22,27 @@ class CategorieRepository extends ServiceEntityRepository{
     //  * @return Categorie[] Returns an array of Categorie objects
     //  */
 
-    public function findByExampleField($value)
+    public function findcategorie()
+    {
+      $conn=$this->getEntityManager()->getConnection();
+      $sql='SELECT *
+            FROM categorie
+            LEFT JOIN outils ON categorie.id = outils.categorie_id
+            WHERE outils.categorie_id=42';
+      $stmt=$conn->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
+        ;
+    }
+
+    public function findOneBySomeField($value): ?Categorie
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
+            ->getOneOrNullResult()
         ;
     }
-
-    // public function findOneBySomeField($value): ?Categorie
-    // {
-    //     return $this->createQueryBuilder('c')
-    //         ->andWhere('c.exampleField = :val')
-    //         ->setParameter('val', $value)
-    //         ->getQuery()
-    //         ->getOneOrNullResult()
-    //     ;
-    // }
 
 }

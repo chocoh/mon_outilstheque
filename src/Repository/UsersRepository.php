@@ -22,17 +22,20 @@ class UsersRepository extends ServiceEntityRepository{
     //  * @return Users[] Returns an array of Users objects
     //  */
 
-    public function findByExampleField($value)
+    public function allInfoUser()
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
+      $conn=$this->getEntityManager()->getConnection();
+      $sql='SELECT `nom`,`prenom`,`adresse`,`zip_code`,`name`,`pseudo`,`avatar`
+            FROM villes
+            LEFT JOIN users ON villes.id = users.ville_id
+            WHERE users.id';
+      $stmt=$conn->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
         ;
     }
+
+
 
     // public function findOneBySomeField($value): ?Users
     // {

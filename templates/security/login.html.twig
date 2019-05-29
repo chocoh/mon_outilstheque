@@ -11,7 +11,10 @@
     <div class="container">
     	<div class="login-container">
         <div id="output"></div>
-        <div class="avatar"></div>
+        <div class="avatar">
+          <i class="fas fa-users"></i>
+        </div>
+        <h5>Je me connecte</h5>
         <div class="form-box">
             <form action="" method="">
               <label for="inputEmail" class="sr-only">Email</label>
@@ -19,15 +22,31 @@
 
               <label for="inputPassword" class="sr-only">Password</label>
               <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+              <input type="hidden" name="_csrf_token"
+                     value="{{ csrf_token('authenticate') }}"
+              >
+
               <button class="btn btn-info btn-block login" type="submit">Validé</button>
+
+
+              <div class="createUser">
+              <div class="">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <h5>Vous n'avez pas de compte</h5>
+
+              <a class="btn btn-info btn-block createlogin" href="{{ path('users_new') }}">Créer un compte</a>
+              </div>
             </form>
         </div>
       </div>
+
+
+      <a href="{{ path('outils_index') }}">  Accueil</a>
     </div>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -42,4 +61,6 @@
 
 
 </form>
+
+
 {% endblock %}
