@@ -18,6 +18,7 @@
         "symfony/form": "4.2.*",
         "symfony/framework-bundle": "4.2.*",
         "symfony/maker-bundle": "^1.11",
+        "symfony/messenger": "4.2.*",
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "^1.0",
         "symfony/process": "4.2.*",

@@ -53,6 +53,7 @@
               <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02">
                   <option selected>Où ?</option>
+
                   <option value="1">exemple 1</option>
                   <option value="2">exemple 2</option>
                   <option value="3">exemple 3</option>
@@ -63,9 +64,13 @@
               <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02">
                   <option selected>Catégorie</option>
-                  <option value="1">exemple 1</option>
-                  <option value="2">exemple 2</option>
-                  <option value="3">exemple 3</option>
+                  {% for outil in outils %}
+                  <option value="">{{ outil.categorie_id }}</option>
+                  {% else %}
+                      <tr>
+                          <td colspan="4">no records found</td>
+                      </tr>
+                  {% endfor %}
                 </select>
 
               </div>
