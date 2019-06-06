@@ -1,8 +1,8 @@
 framework:
     secret: '%env(APP_SECRET)%'
     profiler:
-        collect: false
-    #default_locale: en
+        collect: true
+    default_locale: fr
     csrf_protection: true
     #http_method_override: true
 
