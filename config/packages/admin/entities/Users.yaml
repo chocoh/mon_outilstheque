@@ -11,4 +11,5 @@ easy_admin:
           - {property: 'avatar'}
           - {property: 'email'}
           - {property: 'ville'}
-  disabled_actions: ['new']
+        
+  # disabled_actions: ['new']

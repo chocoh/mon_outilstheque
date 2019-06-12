@@ -11,7 +11,7 @@ class MediaType extends AbstractType{
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('ulr_media')
+            ->add('url_media')
             ->add('outil')
         ;
     }

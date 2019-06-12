@@ -18,7 +18,7 @@ class Media{
     /**
      * @ORM\Column(type="string", length=500)
      */
-    private $ulr_media;
+    private $url_media;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Outils", inversedBy="media")
@@ -31,17 +31,17 @@ class Media{
     }
     public function __toString()
     {
-            return $this->getUlrMedia();
+            return $this->geturlMedia();
     }
 
-    public function getUlrMedia(): ?string
+    public function geturlMedia(): ?string
     {
-        return $this->ulr_media;
+        return $this->url_media;
     }
 
-    public function setUlrMedia(string $ulr_media): self
+    public function seturlMedia(string $url_media): self
     {
-        $this->ulr_media = $ulr_media;
+        $this->url_media = $url_media;
 
         return $this;
     }

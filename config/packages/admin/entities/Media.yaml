@@ -1,0 +1,8 @@
+easy_admin:
+  entities:
+    Media:
+      class: App\Entity\Media
+      image_base_path: '../build/images/{{ outil.url_media }}'
+      list:
+        fields:
+            - { property: 'url_media', type: 'image' }

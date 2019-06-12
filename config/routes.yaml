@@ -1,3 +1,7 @@
 index:
    path: /
    controller: App\Controller\OutilsController::index
+
+app_logout:
+    path: /logout
+    methods: GET

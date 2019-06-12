@@ -86,7 +86,7 @@ INSERT INTO `emprunt` (`id`, `date_debut`, `date_fin`, `avis`, `outil_id`, `user
 DROP TABLE IF EXISTS `media`;
 CREATE TABLE IF NOT EXISTS `media` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ulr_media` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url_media` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `outil_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_6A2CA10C3ED89C80` (`outil_id`)
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `media` (
 -- Déchargement des données de la table `media`
 --
 
-INSERT INTO `media` (`id`, `ulr_media`, `outil_id`) VALUES
+INSERT INTO `media` (`id`, `url_media`, `outil_id`) VALUES
 (21, 'https://lorempixel.com/640/480/?25847', 25),
 (22, 'https://lorempixel.com/640/480/?53893', 22),
 (23, 'https://lorempixel.com/640/480/?72331', 21),
@@ -27775,7 +27775,7 @@ INSERT INTO `villes` (`id`, `departement_code`, `insee_code`, `zip_code`, `name`
 (27476, '68', '68296', '68590', 'Saint-Hippolyte', 'saint hippolyte', 48.23624809302324, 7.35257911627907),
 (27477, '68', '68297', '68300', 'Saint-Louis', 'saint louis', 47.59406247787611, 7.5466276991150405),
 (27478, '68', '68298', '68160', 'Sainte-Marie-aux-Mines', 'sainte marie aux mines', 48.23264230263157, 7.17197059210526),
-(27479, '68', '68299', '68210', 'Saint-Ulrich', 'saint ulrich', 47.58944472868219, 7.11019527131783),
+(27479, '68', '68299', '68210', 'Saint-urlich', 'saint urlich', 47.58944472868219, 7.11019527131783),
 (27480, '68', '68300', '68390', 'Sausheim', 'sausheim', 47.78704878048782, 7.36920756097561),
 (27481, '68', '68301', '68440', 'Schlierbach', 'schlierbach', 47.67834238805971, 7.4092052238806),
 (27482, '68', '68302', '68520', 'Schweighouse-Thann', 'schweighouse thann', 47.74897789473684, 7.17574505263158),
@@ -34357,7 +34357,7 @@ INSERT INTO `villes` (`id`, `departement_code`, `insee_code`, `zip_code`, `name`
 (34045, '87', '87195', '87360', 'Tersannes', 'tersannes', 46.2948893006993, 1.12381664335664),
 (34046, '87', '87196', '87320', 'Thiat', 'thiat', 46.27386278688524, 0.97146759562842),
 (34047, '87', '87197', '87140', 'Thouron', 'thouron', 45.99735733766234, 1.21945006493506),
-(34048, '87', '87198', '87140', 'Vaulry', 'vaulry', 46.0308994701987, 1.0900557615894),
+(34048, '87', '87198', '87140', 'Vaurly', 'vaurly', 46.0308994701987, 1.0900557615894),
 (34049, '87', '87199', '87600', 'Vayres', 'vayres', 45.77241265027327, 0.82116786885246),
 (34050, '87', '87200', '87360', 'Verneuil-Moustiers', 'verneuil moustiers', 46.33489317460317, 1.12500243386243),
 (34051, '87', '87201', '87430', 'Verneuil-sur-Vienne', 'verneuil sur vienne', 45.85012789090908, 1.12816901818182),

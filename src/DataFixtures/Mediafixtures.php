@@ -15,7 +15,7 @@ class Mediafixtures extends Fixture
       for ($i = 0; $i < 5; $i++){
         $faker = Faker\Factory::create('fr_FR');
         $media= new Media();
-        $media->setUlrMedia($faker->imageUrl);
+        $media->seturlMedia($faker->imageUrl);
 
         $manager->persist($media);
       }

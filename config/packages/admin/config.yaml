@@ -1,2 +1,35 @@
 easy_admin:
-  site_name: '<h1>Mon OutilsThèque</h1>'
+  site_name: '<h1>Mon <em style="font-size: 80%;">OutilsThèque.</em><img src="https://symfony.com/logos/symfony_white_01.png" /></h1>'
+
+  design:
+    brand_color: '#1ABC9C'
+    assets:
+            css:
+                # HTTP protocol-relative URL
+                - '//example.org/css/admin1.css'
+                # absolute non-secure URL
+                - 'http://example.org/css/admin2.css'
+                # absolute secure URL
+                - 'https://example.org/css/admin3.css'
+                # absolute internal bundle URL
+                - '/bundles/user/css/admin4.css'
+                # relative internal bundle URL
+                - 'bundles/app/css/admin5.css'
+            js:
+                # this option works exactly the same as the 'css' option
+                - '//example.org/js/admin1.js'
+                - 'http://example.org/js/admin2.js'
+                - 'https://example.org/js/admin3.js'
+                - '/bundles/user/js/admin4.js'
+                - 'bundles/app/js/admin5.js'
+            favicon: '/assets/backend/favicon.ico'
+            
+
+
+  formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
+
+  list:
+    title: '%%entity_label%%'

@@ -10,5 +10,6 @@ easy_admin:
         edit: categorie/edit.html.twig
   list:
     actions:
+      - {name: 'show', icon: 'pencil', label: 'detail'}
       - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary'}
       - {name: 'delete', icon: 'trash', label: false,css_class: 'btn btn-danger'}

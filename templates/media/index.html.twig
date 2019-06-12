@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Ulr_media</th>
+                <th>url_media</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -17,7 +17,7 @@
         {% for medium in media %}
             <tr>
                 <td>{{ medium.id }}</td>
-                <td>{{ medium.ulrMedia }}</td>
+                <td>{{ medium.urlMedia }}</td>
                 <td>
                     <a href="{{ path('media_show', {'id': medium.id}) }}">show</a>
                     <a href="{{ path('media_edit', {'id': medium.id}) }}">edit</a>

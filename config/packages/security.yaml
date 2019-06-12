@@ -20,7 +20,8 @@ security:
             guard:
                 authenticators:
                     - App\Security\UsersAuthenticator
-
+            logout:
+                path:   app_logout
             # activate different ways to authenticate
 
             # http_basic: true

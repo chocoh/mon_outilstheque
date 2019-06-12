@@ -9,6 +9,7 @@ easy_admin:
         children:
           - {entity: Categorie}
           - {entity: Outils}
+          - {entity: Media}
 
       - label: 'Mon emprunts'
         children:
