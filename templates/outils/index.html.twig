@@ -1,3 +1,101 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Outils index{% endblock %}
+
+{%block main%}
+<main class="container">
+  <div class="check-radio">
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+      <label class="custom-control-label" for="customRadioInline1">Offres de prêts</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+      <label class="custom-control-label" for="customRadioInline2">Demande de prêts</label>
+    </div>
+  </div>
+  <div class="search">
+    <div class="row">
+      <div class="col">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Search">
+        </form>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Où ?</option>
+
+            <option value="1">exemple 1</option>
+            <option value="2">exemple 2</option>
+            <option value="3">exemple 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Catégorie</option>
+            {% for outil in outils %}
+            <option value="">{{ outil.categorie_id }}</option>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+          </select>
+
+        </div>
+      </div>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+    </div>
+
+  </div>
+  <div class="annonce">
+    <div class="home">
+      <h2>Les dernières annonces</h2>
+        <table class="table">
+            <tbody>
+            {% for outil in outils %}
+               <div class="row">
+                <div class="col cardannonce" >
+                  <div class="card w-100">
+                    <div class="card-body">
+                      {% if outil.url_media != "" %}
+                          <img src="../build/images/{{ outil.url_media }}" width="150" height="150" class="rounded float-right" alt="..." >
+                      {% endif %}
+                        <div class="card-body">
+                        <h5 class="card-title">{{ outil.nom_outil }}</h5>
+                        <p class="card-text">{{ outil.descriptifs }}</p>
+                        <p class="card-text"><small class="text-muted">Disponible pendant {{ outil.duree_emprunt }} jours</small></p>
+                        <a class="btn btn-secondary" href="{{ path('outils_show', {'id': outil.id}) }}">Détail</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="sidebar">
+      <h2>A la une</h2>
+      <div class="card">
+        <img class="card-img-top" src="http://www.placehold.it/280x180" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-secondary">Détail</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+{%endblock%}
