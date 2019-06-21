@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 /**
  * @Route("/outils")
  */
@@ -47,6 +50,39 @@ class OutilsController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+
+        /**
+         * @Route("/search", name="search")
+         */
+        public function searchBar(Request $request){
+          $form=$this->createFormBuilder(null,[
+                'action' => $this->generateUrl('search'),
+                'method' => 'PUT',
+            ])
+          ->add('query',TextType::class)
+          ->add('search',SubmitType::class,[
+            'attr'=>[
+              'class'=>'btn btn-primary'
+            ]
+          ])
+          ->getForm();
+
+          $form->handleRequest($request);
+
+          if ($form->isSubmitted()) {
+            $infos=$form->getData();
+            $chercher=$this->getDoctrine()
+             ->getRepository(Outils::class)
+             ->searchOutils($infos['query']);
+             var_dump($chercher);
+              // return $this->redirectToRoute('task_success');
+          }
+
+          return $this->render('search/searchBar.html.twig',[
+            'form'=>$form->createView()
+          ]);
+        }
 
     /**
      * @Route("/{id}", name="outils_show", methods={"GET"})
@@ -93,4 +129,5 @@ class OutilsController extends AbstractController
 
         return $this->redirectToRoute('outils_index');
     }
+
 }

@@ -33,6 +33,15 @@ class OutilsRepository extends ServiceEntityRepository
       return $stmt->fetchAll();
     }
 
+    public function searchOutils($search)
+    {
+      $conn=$this->getEntityManager()->getConnection();
+      $sql="SELECT * FROM Outils where nom_outil LIKE '%$search%'  OR descriptifs LIKE '%$search%'";
+      $stmt=$conn->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
+    }
+
 
     public function findOneBySomeField($value): ?Outils
     {
