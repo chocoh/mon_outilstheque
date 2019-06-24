@@ -3,36 +3,21 @@
 {% block title %}Outils{% endblock %}
 
 {%block main%}
-    <h1>Outils</h1>
+  <div class="container">
+  <h1>Outils</h1>
+    <div class="row" id="outilsdetail">
+      <div class="col">
+        <tr>
+          <h5>Déscriptif :</h5>
+          <td>{{ outil.descriptifs }}</td>
+        </tr>
+      </div>
+      <div class="col">
+        <h5>Etat :</h5>
+      </div>
+    </div>
+  <div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ outil.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom_outil</th>
-                <td>{{ outil.nomOutil }}</td>
-            </tr>
-            <tr>
-                <th>Descriptifs</th>
-                <td>{{ outil.descriptifs }}</td>
-            </tr>
-            <tr>
-                <th>Date_enregistrement</th>
-                <td>{{ outil.dateEnregistrement ? outil.dateEnregistrement|date('d-m-y H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Duree_emprunt</th>
-                <td>{{ outil.dureeEmprunt }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <a href="{{ path('index') }}">Retour a l'accueil</a>
 
-    <a href="{{ path('outils_index') }}">back to list</a>
-
-    <a href="{{ path('outils_edit', {'id': outil.id}) }}">edit</a>
-
-    {{ include('outils/_delete_form.html.twig') }}
 {% endblock %}
